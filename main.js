@@ -36,9 +36,6 @@ function createWindow () {
         label: 'File',
         submenu: [
             { 
-                label: 'Adjust Notification Value'
-            },
-            { 
                 label: 'CoinMarketCap',
                 click(){
                     shell.openExternal('http://coinmarketcap.com/')
