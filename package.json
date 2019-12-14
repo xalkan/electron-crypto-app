@@ -4,13 +4,17 @@
   "description": "electron crypto app",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-crypto-app --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Crypto App\"",    
+    "package-linux": "electron-packager . electron-crypto-app --overwrite --asar=true --platform=linux --arch=x64 --prune=true --out=release-builds"
   },
   "keywords": [],
-  "author": "",
+  "author": "xalkan",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^7.1.4"
+    "electron": "^7.1.4",
+    "electron-packager": "^14.1.1"
   },
   "dependencies": {
     "axios": "^0.19.0"
