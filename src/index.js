@@ -10,7 +10,8 @@ notifyBtn.addEventListener('click', function(e){
         frame: false, 
         width: 400, 
         height: 200,
-        transparent:true
+        transparent:true,
+        alwaysOnTop: true
     })
     
     win.on('close', function() { win == null })
