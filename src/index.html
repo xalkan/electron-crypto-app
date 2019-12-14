@@ -7,9 +7,36 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   </head>
   <body>
-    <h1>Electron Crypto App!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    
+    <div class="row">
+      
+      <div id="price-container">
+        <p class="subtext">
+          Current BTC
+        </p>
+        <h1 class="price">
+          Loading...
+        </h1>
+      </div>
+
+      <div id="goal-container">
+        <p>
+          <img src="../assets/images/up.svg" alt="">
+          <span class="targetPrice">
+            Choose a Target Price
+          </span>
+        </p>
+      </div>
+
+      <div id="right-container">
+        <button id="notifyBtn">
+          Notify me when...
+        </button>
+      </div>
+      
+    </div>
+
+    <script src="index.js"></script>
+  
   </body>
 </html>
