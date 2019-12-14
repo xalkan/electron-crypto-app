@@ -11,7 +11,10 @@ notifyBtn.addEventListener('click', function(e){
         width: 400, 
         height: 200,
         transparent:true,
-        alwaysOnTop: true
+        alwaysOnTop: true,
+        webPreferences: {
+            nodeIntegration: true
+        }
     })
     
     win.on('close', function() { win == null })
