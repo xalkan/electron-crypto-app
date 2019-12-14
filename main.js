@@ -28,6 +28,8 @@ function createWindow () {
     win = null
   })
 
+  app.setAppUserModelId("electron-crypto-app"); // set appId from package.json
+
   const menu = Menu.buildFromTemplate([
     {
 

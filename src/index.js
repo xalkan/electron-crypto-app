@@ -7,6 +7,13 @@ const axios = require('axios')
 const notifyBtn = document.getElementById('notifyBtn')
 let price = document.getElementById('price')
 let targetPrice = document.getElementById('targetPrice')
+let targetPriceVal
+
+const notification = {
+    title: 'BTC',
+    body: 'BTC just beat your target price!',
+    icon: path.join(__dirname, '../assets/icons/btc.png')
+}
 
 notifyBtn.addEventListener('click', function(e){
     const modalPath = path.join('file://', __dirname, 'add.html')
@@ -32,6 +39,10 @@ function getBTC(){
         .then(res => {
             const cryptos = res.data.BTC.USD
             price.innerHTML = '$'+ cryptos.toLocaleString('en')
+
+            if(targetPrice.innerHTML != '' && res.data.BTC.USD > targetPriceVal){
+                const newNotification = new window.Notification(notification.title, notification)
+            }
         })
 }
 
