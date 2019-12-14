@@ -1,6 +1,7 @@
 const electron = require('electron')
 const path = require('path')
 const BrowserWindow = electron.remote.BrowserWindow
+const ipcRenderer = electron.ipcRenderer
 const axios = require('axios')
 
 const notifyBtn = document.getElementById('notifyBtn')
@@ -34,7 +35,13 @@ function getBTC(){
         })
 }
 
-
+getBTC()
 setInterval(() => {
     getBTC()
-}, 3000);
+}, 30000);
+
+
+ipcRenderer.on('target-price-value', function(e, value){
+    targetPriceVal = Number(value)
+    targetPrice.innerHTML = '$'+targetPriceVal.toLocaleString('en')
+})
